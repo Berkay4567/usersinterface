@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+            padding: 10px 50px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+            input[type=text]:focus, input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+            }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        /* Set a style for all buttons */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 1px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.9;
+        }
+
+        .btn {
+            color: white;
+            padding: 10px 20px;
+            float: right;
+        }
+
+        .btnn {
+            color: white;
+            padding: 10px 20px;
+            background-color: #2196F3;
+        }
+
+        .btnnn {
+            color: white;
+            padding: 10px 20px;
+            float: right;
+            background-color: #2196F3;
+            
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #ddd;
+            width: 100%;
+            padding-right: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 12px;
+        }
+
+            #myTable th, #myTable td {
+                text-align: left;
+                padding: 12px;
+            }
+
+            #myTable tr {
+                border-bottom: 1px solid #ddd;
+            }
+
+                #myTable tr.header, #myTable tr:hover {
+                    background-color: #2196F3;
+                }
+
+        .container {
+            padding: 16px;
+        }
+
+        .roles {
+            padding: 16px 8px;
+            color: #ddd
+        }
+        /* Clear floats */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .info {
+            background-color: #2196F3;
+        }
+            /* Blue */
+            .info:hover {
+                background: #0b7dda;
+            }
+        /* Change styles for cancel button and signup button on extra small screens */
+
+
+    </style>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="ng.js"></script>
+    <script>
+        function addRow() {
+            // get input values
+            var id = document.getElementById('name').value;
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var checkBox = document.getElementById("myCheck").value;
+
+            // get the html table
+            // 0 = the first table
+            var table = document.getElementsByTagName('table')[0];
+
+            // add new empty row to the table
+            // 0 = in the top
+            // table.rows.length = the end
+            // table.rows.length/2+1 = the center
+            var newRow = table.insertRow(table.rows.length);
+
+            // add cells to the row
+            var cel1 = newRow.insertCell(0);
+            var cel2 = newRow.insertCell(1);
+            var cel3 = newRow.insertCell(2);
+            var cel4 = newRow.insertCell(3);
+
+            // add values to the cells
+            cel1.innerHTML = name;
+            cel2.innerHTML = name;
+            cel3.innerHTML = email;
+            cel4.innerHTML = checkBox;
+        }
+    </script>
+</head>
+
+<body>
+
+        <div class="navbar">
+            <button class="btnnn" align="right" onclick="addRow();" >Save User</button>
+            &nbsp;
+            <button class="btnn" align="left" >+ &nbsp;New User</button>
+            &nbsp;
+            &nbsp;&nbsp; <input type="checkbox" checked="checked" name="hide" style="margin-bottom:10px">&nbsp;Hide Disabled User
+        </div>
+        <div class="container" style="float:left;width:50%;">
+            <table id="myTable">
+                <tr class="header">
+                    <th style="width:15%;"><font color="#fff">ID &#9650;</font></th><i class="fa fa-glass" aria-hidden="true"></i>
+                    <th style="width:30%;"><font color="#fff">User Name<i class="fa fa-sort" aria-hidden="true"></i></font></th><i class="fa fa-glass" aria-hidden="true"></i>
+                    <th style="width:30%;"><font color="#fff">Email</font></th><i class="fa fa-sort" aria-hidden="true"></i><i class="fa fa-glass" aria-hidden="true"></i>
+                    <th style="width:15%;"><font color="#fff">Enabled<a href="#"><i class="fa fa-sort" aria-hidden="true"></i></a></font></th><i class="fa fa-glass" aria-hidden="true"></i>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>AdminUser</td>
+                    <td>admin@piworks.net</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>TestUser</td>
+                    <td>admin@piworks.net</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>TestUser</td>
+                    <td>admin@piworks.net</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>TestUser</td>
+                    <td>admin@piworks.net</td>
+                    <td>true</td>
+                </tr>
+            </table>
+        </div>
+        <div class="container" style="float:right;width:50%;">
+
+
+            <div class="container" style="float:left;width:30%;">
+                <label for="name"><b>User Name:</b></label>
+            </div>
+            <div class="container" style="float:left;width:70%;">
+                <input type="text" placeholder="" name="name" id="name" required>
+            </div>
+            <div class="container" style="float:left;width:30%;">
+                <label for="dname"><b>Display Name:</b></label>
+            </div>
+            <div class="container" style="float:left;width:70%;">
+                <input type="text" placeholder="" name="dname" id="dname" required>
+            </div>
+            <div class="container" style="float:left;width:30%;">
+                <label for="phone"><b>Phone:</b></label>
+            </div>
+
+            <div class="container" style="float:left;width:70%;">
+                <input type="text" placeholder="" name="phone" required>
+            </div>
+
+            <div class="container" style="float:left;width:30%;">
+                <label for="email"><b>E-mail:</b></label>
+            </div>
+
+            <div class="container" style="float:left;width:70%;">
+                <input type="text" placeholder="" name="email" id="email" required>
+            </div>
+
+            <div class="container" style="float:left;width:30%;">
+                <label for="role"><b>User Roles:</b></label>
+            </div>
+
+            <div class="container" style="float:left;width:70%;">
+                <select name="roles" id="roles" style="width: 270px !important; min-width: 0px; max-width: 270px;height:35px; background: #dddd;">
+                    <option disabled selected value>Select user roles...</option>
+                    <option value="volvo">Guest</option>
+                    <option value="saab">Admin</option>
+                    <option value="opel">SuperAdmin</option>
+                </select>
+            </div>
+            <div class="container" style="float:left;width:30%;">
+                <label for="email"><b>Enabled:</b></label>
+            </div>
+            <div class="container" style="float:left;width:70%;">
+
+                <input type="checkbox" checked="checked" id="myCheck" name="remember" style="margin-bottom:15px">
+            </div>
+            
+
+
+        </div>
+
+</body>
+</html>
+
